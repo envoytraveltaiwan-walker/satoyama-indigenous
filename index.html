@@ -67,20 +67,19 @@
 </head>
 <body class="lang-ja-active pb-32">
 
-    <!-- 頂部固定導航列（包含泰雅圖騰飾條、金色菱形星芒 Logo 與語言切換按鈕） -->
-    <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs transition-all">
-        <!-- 泰雅紋飾頂條 -->
-        <div class="atayal-pattern"></div>
+    <!-- 泰雅紋飾頂條 -->
+    <div class="atayal-pattern sticky top-0 z-40"></div>
 
-        <!-- 固定導航內容 -->
-        <div class="max-w-xl mx-auto px-4 py-2.5 flex items-center justify-between">
+    <main class="max-w-xl mx-auto px-4 pt-3 sm:pt-5">
+
+        <!-- 頂部導航：安捷旅行社 Logo + 語言切換 -->
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-stone-200">
             <div class="flex items-center">
-                <img src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/healing-trip/main/ENVOY_Horizontal_Transparent.png" 
-                     alt="ENVOY TRAVEL 安捷國際旅行社" 
-                     class="h-7 sm:h-8 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/healing-trip/main/ENVOY_Logo_Transparent_HQ.png" 
+                     alt="安捷國際旅行社 ENVOY TRAVEL" 
+                     class="h-9 sm:h-10 w-auto object-contain">
             </div>
 
-            <!-- 語言切換膠囊 -->
             <div class="inline-flex bg-stone-200/90 p-0.5 rounded-full text-xs font-semibold flex-shrink-0">
                 <button id="btn-ja" onclick="setLanguage('ja')" class="px-3 py-1.5 rounded-full transition-all bg-stone-900 text-white shadow-sm flex items-center gap-1 text-xs">
                     <i class="fa-solid fa-globe text-[11px]"></i> 日本語
@@ -90,9 +89,6 @@
                 </button>
             </div>
         </div>
-    </header>
-
-    <main class="max-w-xl mx-auto px-4 pt-4 sm:pt-5">
 
         <!-- 原民會官方遊程品牌橫額 -->
         <div class="mb-5 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center">
@@ -306,116 +302,6 @@
             </div>
         </section>
 
-        <!-- 「部行山海間」系列精選推薦遊程（2條線上可跳轉 + 2條籌備中彈窗） -->
-        <section class="bg-white rounded-2xl p-4 sm:p-5 mb-5 shadow-sm border border-stone-200">
-            <div class="flex items-center justify-between mb-3.5">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-map-location-dot text-[#A62122] text-base"></i>
-                    <h3 class="font-bold text-stone-900 text-base">
-                        <span class="lang-ja">「部行山海間」シリーズおすすめルート</span>
-                        <span class="lang-zh">「部行山海間」系列精選推薦遊程</span>
-                    </h3>
-                </div>
-                <span class="text-xs text-stone-500 font-medium">4 Routes</span>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2.5">
-                <!-- 行程 1：泰雅里山慢活（連到 healing-trip） -->
-                <a href="https://envoytraveltaiwan-walker.github.io/healing-trip/" 
-                   onclick="gtag('event', 'click_related_trip', {'trip_name': 'healing_trip'});"
-                   class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
-                    <div>
-                        <span class="inline-block bg-[#A62122] text-white text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5">1泊2日</span>
-                        <p class="font-bold text-stone-900 text-xs sm:text-sm group-hover:text-[#A62122] transition-colors leading-snug">
-                            <span class="lang-ja">タイヤル里山リトリート</span>
-                            <span class="lang-zh">泰雅聚落田園慢活</span>
-                        </p>
-                        <p class="text-stone-500 text-xs mt-1 line-clamp-2">
-                            <span class="lang-ja">伝統手仕事とお守り作り・水辺の宿</span>
-                            <span class="lang-zh">祖靈之眼祈福手作・靜謐水岸宿</span>
-                        </p>
-                    </div>
-                    <span class="text-[#A62122] text-xs font-semibold mt-2.5 flex items-center gap-1">
-                        <span class="lang-ja">詳細を見る</span>
-                        <span class="lang-zh">查看行程</span>
-                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    </span>
-                </a>
-
-                <!-- 行程 2：泰雅櫻花祭之旅（連到 sakura-atayal） -->
-                <a href="https://envoytraveltaiwan-walker.github.io/sakura-atayal/" 
-                   onclick="gtag('event', 'click_related_trip', {'trip_name': 'sakura_atayal'});"
-                   class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
-                    <div>
-                        <span class="inline-block bg-[#A62122] text-white text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5">1泊2日</span>
-                        <p class="font-bold text-stone-900 text-xs sm:text-sm group-hover:text-[#A62122] transition-colors leading-snug">
-                            <span class="lang-ja">タイヤル桜と原郷の旅</span>
-                            <span class="lang-zh">泰雅櫻花與原鄉之美</span>
-                        </p>
-                        <p class="text-stone-500 text-xs mt-1 line-clamp-2">
-                            <span class="lang-ja">季節の桜と原郷の豊かな自然に触れる</span>
-                            <span class="lang-zh">季節限定山櫻漫舞・山海部落文化</span>
-                        </p>
-                    </div>
-                    <span class="text-[#A62122] text-xs font-semibold mt-2.5 flex items-center gap-1">
-                        <span class="lang-ja">詳細を見る</span>
-                        <span class="lang-zh">查看行程</span>
-                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    </span>
-                </a>
-
-                <!-- 行程 3：籌備中路線 A（點擊提示建置中） -->
-                <button type="button" 
-                        onclick="showComingSoonModal('bunun_trip')"
-                        class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block bg-stone-300 text-stone-700 text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5">
-                            <span class="lang-ja">近日公開</span>
-                            <span class="lang-zh">即將推出</span>
-                        </span>
-                        <p class="font-bold text-stone-800 text-xs sm:text-sm leading-snug">
-                            <span class="lang-ja">ブヌン族の歌声と山林</span>
-                            <span class="lang-zh">布農天籟與山林尋味</span>
-                        </p>
-                        <p class="text-stone-500 text-xs mt-1 line-clamp-2">
-                            <span class="lang-ja">八部合音と伝統の風土体験</span>
-                            <span class="lang-zh">八部合音天籟・風土食育農作</span>
-                        </p>
-                    </div>
-                    <span class="text-stone-400 text-xs font-medium mt-2.5 flex items-center gap-1">
-                        <i class="fa-solid fa-clock-rotate-left text-[11px]"></i>
-                        <span class="lang-ja">準備中（詳細）</span>
-                        <span class="lang-zh">建置中（點選）</span>
-                    </span>
-                </button>
-
-                <!-- 行程 4：籌備中路線 B（點擊提示建置中） -->
-                <button type="button" 
-                        onclick="showComingSoonModal('paiwan_trip')"
-                        class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block bg-stone-300 text-stone-700 text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5">
-                            <span class="lang-ja">近日公開</span>
-                            <span class="lang-zh">即將推出</span>
-                        </span>
-                        <p class="font-bold text-stone-800 text-xs sm:text-sm leading-snug">
-                            <span class="lang-ja">パイワン族の工芸と古道</span>
-                            <span class="lang-zh">排灣琉璃工藝與南迴古道</span>
-                        </p>
-                        <p class="text-stone-500 text-xs mt-1 line-clamp-2">
-                            <span class="lang-ja">琉璃ビーズと黒板岩の歴史集落</span>
-                            <span class="lang-zh">貴族琉璃燒製・石板屋聚落巡禮</span>
-                        </p>
-                    </div>
-                    <span class="text-stone-400 text-xs font-medium mt-2.5 flex items-center gap-1">
-                        <i class="fa-solid fa-clock-rotate-left text-[11px]"></i>
-                        <span class="lang-ja">準備中（詳細）</span>
-                        <span class="lang-zh">建置中（點選）</span>
-                    </span>
-                </button>
-            </div>
-        </section>
-
         <!-- 主辦單位介紹與認證資質 -->
         <section class="bg-white rounded-2xl p-4 sm:p-5 mb-5 shadow-sm border border-stone-200">
             <div class="flex items-center gap-3.5 mb-3.5">
@@ -465,7 +351,7 @@
             </div>
         </section>
 
-        <!-- 常見問答 (FAQ) -->
+        <!-- 常見問答 (FAQ)：含平日出發定義、住宿型態、旅行社同業 Land 地接委託 -->
         <section class="bg-white rounded-2xl p-4 sm:p-5 mb-5 shadow-sm border border-stone-200">
             <div class="flex items-center justify-between mb-3.5">
                 <h3 class="font-bold text-stone-900 text-base">
@@ -532,31 +418,6 @@
 
     </main>
 
-    <!-- 「建置中」彈出式對話框 (Modal) -->
-    <div id="coming-soon-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center relative border border-stone-200">
-            <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto mb-3.5">
-                <i class="fa-solid fa-compass-drafting text-xl"></i>
-            </div>
-            <div class="lang-ja">
-                <h4 class="font-bold text-stone-900 text-base mb-1.5">ただいま準備中です</h4>
-                <p class="text-stone-600 text-xs leading-relaxed mb-5">
-                    こちらの文化体験ルートは現在、より充実した旅をお届けできるよう丁寧に企画・準備中です。近日中に公開いたしますので、どうぞお楽しみに！
-                </p>
-            </div>
-            <div class="lang-zh">
-                <h4 class="font-bold text-stone-900 text-base mb-1.5">精彩遊程籌備建置中</h4>
-                <p class="text-stone-600 text-xs leading-relaxed mb-5">
-                    此特色文化遊程目前正由專業團隊積極籌備與實地踩線中，即將正式推出，敬請期待！若有企業包團或提前預約需求，歡迎隨時洽詢專人。
-                </p>
-            </div>
-            <button type="button" onclick="closeComingSoonModal()" class="w-full py-2.5 bg-stone-900 text-white rounded-xl text-xs font-bold shadow-sm hover:bg-stone-800 transition-all">
-                <span class="lang-ja">閉じる</span>
-                <span class="lang-zh">我知道了</span>
-            </button>
-        </div>
-    </div>
-
     <!-- 底部固定諮詢列（已掛載 GA4 轉換事件追蹤） -->
     <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-2.5 z-50 shadow-lg pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div class="max-w-xl mx-auto flex gap-2.5">
@@ -579,7 +440,7 @@
         </div>
     </div>
 
-    <!-- 語言切換與彈窗控制腳本 -->
+    <!-- 語言切換腳本（包含 GA4 語言切換事件記錄） -->
     <script>
         function setLanguage(lang) {
             const body = document.body;
@@ -604,24 +465,6 @@
                 btnZh.className = "px-3 py-1.5 rounded-full transition-all text-stone-600 hover:text-stone-900 flex items-center gap-1 text-xs";
                 document.documentElement.lang = "ja";
             }
-        }
-
-        // 籌備中路線彈窗控制
-        function showComingSoonModal(routeId) {
-            const modal = document.getElementById('coming-soon-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            
-            // GA4 記錄訪客對籌備中路線的點擊
-            if (typeof gtag === 'function') {
-                gtag('event', 'click_coming_soon_trip', { 'route_id': routeId });
-            }
-        }
-
-        function closeComingSoonModal() {
-            const modal = document.getElementById('coming-soon-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
         }
     </script>
 
