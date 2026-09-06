@@ -67,7 +67,7 @@
 </head>
 <body class="lang-ja-active pb-32">
 
-    <!-- 頂部固定導航列（包含泰雅圖騰飾條、新版金色菱形星芒 Logo 與語言切換按鈕） -->
+    <!-- 頂部固定導航列（包含泰雅圖騰飾條、金色菱形星芒 Logo 與語言切換按鈕） -->
     <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs transition-all">
         <!-- 泰雅紋飾頂條 -->
         <div class="atayal-pattern"></div>
@@ -306,7 +306,7 @@
             </div>
         </section>
 
-        <!-- 「部行山海間」系列精選推薦遊程（2 條可跳轉連結 + 2 條點選跳出建置中彈窗） -->
+        <!-- 「部行山海間」系列精選推薦遊程（2條線上可跳轉 + 2條籌備中彈窗） -->
         <section class="bg-white rounded-2xl p-4 sm:p-5 mb-5 shadow-sm border border-stone-200">
             <div class="flex items-center justify-between mb-3.5">
                 <div class="flex items-center space-x-2">
@@ -320,7 +320,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-2.5">
-                <!-- 行程 1：泰雅里山慢活（可直接跳轉） -->
+                <!-- 行程 1：泰雅里山慢活（連到 healing-trip） -->
                 <a href="https://envoytraveltaiwan-walker.github.io/healing-trip/" 
                    onclick="gtag('event', 'click_related_trip', {'trip_name': 'healing_trip'});"
                    class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
@@ -342,7 +342,7 @@
                     </span>
                 </a>
 
-                <!-- 行程 2：泰雅櫻花之旅（可直接跳轉） -->
+                <!-- 行程 2：泰雅櫻花祭之旅（連到 sakura-atayal） -->
                 <a href="https://envoytraveltaiwan-walker.github.io/sakura-atayal/" 
                    onclick="gtag('event', 'click_related_trip', {'trip_name': 'sakura_atayal'});"
                    class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
@@ -364,7 +364,7 @@
                     </span>
                 </a>
 
-                <!-- 行程 3：布農天籟之旅（點選跳出建置中彈窗） -->
+                <!-- 行程 3：籌備中路線 A（點擊提示建置中） -->
                 <button type="button" 
                         onclick="showComingSoonModal('bunun_trip')"
                         class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
@@ -389,7 +389,7 @@
                     </span>
                 </button>
 
-                <!-- 行程 4：排灣琉璃工藝（點選跳出建置中彈窗） -->
+                <!-- 行程 4：籌備中路線 B（點擊提示建置中） -->
                 <button type="button" 
                         onclick="showComingSoonModal('paiwan_trip')"
                         class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
@@ -547,7 +547,7 @@
             <div class="lang-zh">
                 <h4 class="font-bold text-stone-900 text-base mb-1.5">精彩遊程籌備建置中</h4>
                 <p class="text-stone-600 text-xs leading-relaxed mb-5">
-                    此特色文化遊程目前正由專業團隊積極籌備與實地踩線中，即將正式推出，敬請期待！若有預約或行程洽詢需求，歡迎隨時聯絡專人。
+                    此特色文化遊程目前正由專業團隊積極籌備與實地踩線中，即將正式推出，敬請期待！若有企業包團或提前預約需求，歡迎隨時洽詢專人。
                 </p>
             </div>
             <button type="button" onclick="closeComingSoonModal()" class="w-full py-2.5 bg-stone-900 text-white rounded-xl text-xs font-bold shadow-sm hover:bg-stone-800 transition-all">
@@ -557,29 +557,29 @@
         </div>
     </div>
 
-    <!-- 底部固定諮詢列（通用型：不限身分自由選擇聯繫方式） -->
+    <!-- 底部固定諮詢列（已掛載 GA4 轉換事件追蹤） -->
     <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-2.5 z-50 shadow-lg pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div class="max-w-xl mx-auto flex gap-2.5">
-            <!-- Email 點擊事件 -->
+            <!-- B2B Email 點擊事件 -->
             <a href="mailto:service@envoytravel.com.tw" 
-               onclick="gtag('event', 'click_contact', {'method': 'email'});"
+               onclick="gtag('event', 'click_contact', {'method': 'email', 'target': 'B2B'});"
                class="flex-1 text-center bg-stone-900 active:bg-stone-800 text-white font-bold py-3 px-2 rounded-xl text-sm flex items-center justify-center gap-1.5 shadow-sm">
                 <i class="fa-solid fa-envelope text-sm"></i> 
-                <span class="lang-ja">メールで相談・問い合わせ</span>
-                <span class="lang-zh">信件聯絡諮詢</span>
+                <span class="lang-ja">B2B お問い合わせ</span>
+                <span class="lang-zh">企業 / 同業洽商</span>
             </a>
-            <!-- LINE 點擊事件 -->
+            <!-- B2C LINE 點擊事件 -->
             <a href="https://lin.ee/Z3c7Qam" 
-               onclick="gtag('event', 'click_contact', {'method': 'line'});"
+               onclick="gtag('event', 'click_contact', {'method': 'line', 'target': 'B2C'});"
                class="flex-1 text-center bg-[#26432D] active:bg-emerald-900 text-white font-bold py-3 px-2 rounded-xl text-sm flex items-center justify-center gap-1.5 shadow-sm">
                 <i class="fa-brands fa-line text-base"></i> 
-                <span class="lang-ja">LINE で相談する</span>
+                <span class="lang-ja">個人旅行のご相談</span>
                 <span class="lang-zh">加 LINE 專人諮詢</span>
             </a>
         </div>
     </div>
 
-    <!-- 語言切換與彈窗控制腳本（包含 GA4 事件追蹤） -->
+    <!-- 語言切換與彈窗控制腳本 -->
     <script>
         function setLanguage(lang) {
             const body = document.body;
@@ -606,7 +606,7 @@
             }
         }
 
-        // 控制「建置中」彈出式對話框
+        // 籌備中路線彈窗控制
         function showComingSoonModal(routeId) {
             const modal = document.getElementById('coming-soon-modal');
             modal.classList.remove('hidden');
