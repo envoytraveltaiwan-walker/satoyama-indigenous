@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,35 +42,71 @@
       font-family: 'Noto Serif JP', 'Noto Serif TC', serif;
       -webkit-font-smoothing: antialiased;
     }
+    /* 隱藏滾動條但保持滑動 */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 <body class="bg-paper text-charcoal">
 
-  <!-- 頂部導航 -->
+  <!-- 頂部主導航 (Fixed Header) -->
   <header class="w-full border-b border-borderMuted bg-paper/95 sticky top-0 z-50 backdrop-blur-sm">
-    <div class="max-w-xl mx-auto px-6 h-16 flex items-center justify-between">
-      <!-- 安捷官方 Logo -->
+    <div class="max-w-xl mx-auto px-6 h-14 flex items-center justify-between">
+      <!-- 官方安捷 Logo -->
       <a href="#" class="flex items-center">
         <img 
           src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/ENVOY_Logo_Transparent_HQ.png" 
           alt="ENVOY TRAVEL" 
-          class="h-7 w-auto object-contain"
+          class="h-6 md:h-7 w-auto object-contain"
         />
       </a>
-      <!-- 雙語系切換膠囊 (日語 / 繁中) -->
-      <div class="flex items-center bg-[#ECE8E1] p-1 rounded-full text-[11px] font-sans">
-        <button type="button" onclick="setLang('ja')" id="btn-ja" class="px-3 py-1 rounded-full font-medium transition bg-white text-charcoal shadow-xs">日本語</button>
-        <button type="button" onclick="setLang('zh')" id="btn-zh" class="px-3 py-1 rounded-full font-medium transition text-neutral-500 hover:text-charcoal">繁中</button>
+      <!-- 雙語切換膠囊 -->
+      <div class="flex items-center bg-[#ECE8E1] p-0.5 rounded-full text-[11px] font-sans">
+        <button type="button" onclick="setLang('ja')" id="btn-ja" class="px-2.5 py-0.5 rounded-full font-medium transition bg-white text-charcoal shadow-xs">日本語</button>
+        <button type="button" onclick="setLang('zh')" id="btn-zh" class="px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal">繁中</button>
       </div>
     </div>
+
+    <!-- 章節橫向錨點導航條 (Sub-navigation Index) -->
+    <nav class="border-t border-borderMuted/60 bg-paper/90 px-4 py-2 overflow-x-auto no-scrollbar">
+      <div class="max-w-xl mx-auto flex items-center space-x-5 text-[11px] font-sans whitespace-nowrap text-neutral-500">
+        <a href="#chapter-origin" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">01</span><span id="nav-item-1">島の記憶</span>
+        </a>
+        <span class="text-neutral-300">/</span>
+        <a href="#chapter-culinary" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">02</span><span id="nav-item-2">原生の味覚</span>
+        </a>
+        <span class="text-neutral-300">/</span>
+        <a href="#chapter-heritage" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">03</span><span id="nav-item-3">六つの原風景</span>
+        </a>
+        <span class="text-neutral-300">/</span>
+        <a href="#chapter-guide" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">04</span><span id="nav-item-4">旅の案内人</span>
+        </a>
+        <span class="text-neutral-300">/</span>
+        <a href="#chapter-satoyama" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">05</span><span id="nav-item-5">里山の約束</span>
+        </a>
+        <span class="text-neutral-300">/</span>
+        <a href="#chapter-itineraries" class="hover:text-earthGold transition-colors flex items-center space-x-1">
+          <span class="text-[9px] text-earthGold">06</span><span id="nav-item-6">厳選の旅路</span>
+        </a>
+      </div>
+    </nav>
   </header>
 
   <!-- 主容器 -->
-  <main class="max-w-xl mx-auto px-6 py-10 space-y-16">
+  <main class="max-w-xl mx-auto px-6 py-8 space-y-16">
 
     <!-- HERO SECTION -->
     <section class="text-center space-y-6 pt-2">
-      <!-- 官方計畫雙標誌 -->
       <div class="flex justify-center items-center gap-6 py-2">
         <img 
           src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-02.png" 
@@ -103,8 +139,8 @@
       </div>
     </section>
 
-    <!-- SECTION 1: 島嶼の深層記憶 -->
-    <section class="space-y-6 text-neutral-700 leading-relaxed text-[13px] font-normal">
+    <!-- SECTION 1: 島嶼の深層記憶 (錨點 #chapter-origin) -->
+    <section id="chapter-origin" class="scroll-mt-28 space-y-6 text-neutral-700 leading-relaxed text-[13px] font-normal">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Chapter 01</span>
         <h2 id="ch1-title" class="text-lg font-medium text-charcoal">悠久の時を越えて｜島に息づく七百の記憶</h2>
@@ -125,8 +161,8 @@
       </div>
     </section>
 
-    <!-- SECTION 2: 舌尖上的風土野趣 -->
-    <section class="space-y-6">
+    <!-- SECTION 2: 舌尖上的風土野趣 (錨點 #chapter-culinary) -->
+    <section id="chapter-culinary" class="scroll-mt-28 space-y-6">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Chapter 02</span>
         <h2 id="ch2-title" class="text-lg font-medium text-charcoal">大地の恵みをいただく｜五感を澄ます原生の味覚</h2>
@@ -175,8 +211,8 @@
       </div>
     </section>
 
-    <!-- SECTION 3: 六大風土意象 -->
-    <section class="bg-indigoCard text-white p-6 md:p-8 rounded-2xl space-y-6 shadow-md relative overflow-hidden">
+    <!-- SECTION 3: 六大風土意象 (錨點 #chapter-heritage) -->
+    <section id="chapter-heritage" class="scroll-mt-28 bg-indigoCard text-white p-6 md:p-8 rounded-2xl space-y-6 shadow-md relative overflow-hidden">
       <div class="text-center space-y-2 relative z-10">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.25em] uppercase">Indigenous Heritage</span>
         <h2 id="sec3-title" class="text-base font-medium tracking-wide">大地と祖霊が宿る、六つの原風景</h2>
@@ -228,8 +264,8 @@
       />
     </div>
 
-    <!-- SECTION 4: 旅の案内人 莉梅姐 -->
-    <section class="space-y-6">
+    <!-- SECTION 4: 旅の案内人 莉梅姐 (錨點 #chapter-guide) -->
+    <section id="chapter-guide" class="scroll-mt-28 space-y-6">
       <div class="bg-white p-6 rounded-2xl border border-borderMuted shadow-xs space-y-5">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-4">
@@ -260,8 +296,8 @@
       </div>
     </section>
 
-    <!-- SECTION 5: 里山倡議與6人小團的堅持 -->
-    <section class="bg-[#F0EBE1] p-6 rounded-2xl space-y-4 border border-borderMuted">
+    <!-- SECTION 5: 里山倡議與6人小團的堅持 (錨點 #chapter-satoyama) -->
+    <section id="chapter-satoyama" class="scroll-mt-28 bg-[#F0EBE1] p-6 rounded-2xl space-y-4 border border-borderMuted">
       <div class="flex items-center space-x-2 text-deepForest">
         <span class="text-sm">🍃</span>
         <h3 id="satoyama-title" class="text-sm font-semibold tracking-wide">台湾原郷に息づく「里山（Satoyama）」の約束</h3>
@@ -285,8 +321,8 @@
       </div>
     </section>
 
-    <!-- SECTION 6: 四大行程連結跳轉 -->
-    <section class="space-y-5">
+    <!-- SECTION 6: 四大行程連結跳轉 (錨點 #chapter-itineraries) -->
+    <section id="chapter-itineraries" class="scroll-mt-28 space-y-5">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Curated Journeys</span>
         <h2 id="tour-sec-title" class="text-lg font-medium text-charcoal">莉梅姐が届ける、4つの特別な時間</h2>
@@ -415,11 +451,13 @@
     </div>
   </div>
 
-  <!-- 多語系即時切換 Script (日語 / 繁體中文) -->
+  <!-- 多語系與平滑錨點控制 Script -->
   <script>
     const i18n = {
       ja: {
         metaTitle: "風が語りかける、もうひとつの台湾へ｜ENVOY 安捷國際旅行社",
+        nav1: "島の記憶", nav2: "原生の味覚", nav3: "六つの原風景",
+        nav4: "旅の案内人", nav5: "里山の約束", nav6: "厳選の旅路",
         heroTag: "Special Editorial ・ 里山と原郷の旅",
         heroTitle: "風が語りかける、<br>もうひとつの台湾へ。",
         heroSubtitle: "ガイドブックが記していない、数千年の記憶が息づく場所。<br>大自然と人が織りなす「里山」の温もりに包まれるクラフトツアー。",
@@ -469,6 +507,8 @@
       },
       zh: {
         metaTitle: "聽風的呼吸，走進島嶼的深處｜ENVOY 安捷國際旅行社",
+        nav1: "島嶼記憶", nav2: "原生之味", nav3: "六種原風景",
+        nav4: "旅之引路人", nav5: "里山承諾", nav6: "私藏行程",
         heroTag: "特別企劃 ・ 里山與原鄉慢旅",
         heroTitle: "風所傾訴的，<br>未曾被記載的台灣深處。",
         heroSubtitle: "旅遊書未曾觸及、數千年記憶流淌之地。<br>感受人與自然和諧共生、溫柔包裹身心的「里山」工藝行旅。",
@@ -526,15 +566,24 @@
       const btnZh = document.getElementById('btn-zh');
 
       if (lang === 'ja') {
-        btnJa.className = "px-3 py-1 rounded-full font-medium transition bg-white text-charcoal shadow-xs";
-        btnZh.className = "px-3 py-1 rounded-full font-medium transition text-neutral-500 hover:text-charcoal";
+        btnJa.className = "px-2.5 py-0.5 rounded-full font-medium transition bg-white text-charcoal shadow-xs";
+        btnZh.className = "px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal";
         document.documentElement.lang = "ja";
       } else {
-        btnZh.className = "px-3 py-1 rounded-full font-medium transition bg-white text-charcoal shadow-xs";
-        btnJa.className = "px-3 py-1 rounded-full font-medium transition text-neutral-500 hover:text-charcoal";
+        btnZh.className = "px-2.5 py-0.5 rounded-full font-medium transition bg-white text-charcoal shadow-xs";
+        btnJa.className = "px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal";
         document.documentElement.lang = "zh-TW";
       }
 
+      // 更新目錄導航條文字
+      document.getElementById('nav-item-1').innerText = data.nav1;
+      document.getElementById('nav-item-2').innerText = data.nav2;
+      document.getElementById('nav-item-3').innerText = data.nav3;
+      document.getElementById('nav-item-4').innerText = data.nav4;
+      document.getElementById('nav-item-5').innerText = data.nav5;
+      document.getElementById('nav-item-6').innerText = data.nav6;
+
+      // 更新頁面內容
       document.getElementById('meta-title').innerText = data.metaTitle;
       document.getElementById('hero-tag').innerText = data.heroTag;
       document.getElementById('hero-title').innerHTML = data.heroTitle;
