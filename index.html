@@ -67,7 +67,7 @@
 </head>
 <body class="lang-ja-active pb-32">
 
-    <!-- 頂部固定導航列（包含泰雅圖騰飾條、金色菱形星芒 Logo 與語言切換按鈕） -->
+    <!-- 頂部固定導航列（包含泰雅圖騰飾條、新版金色菱形星芒 Logo 與語言切換按鈕） -->
     <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs transition-all">
         <!-- 泰雅紋飾頂條 -->
         <div class="atayal-pattern"></div>
@@ -306,7 +306,7 @@
             </div>
         </section>
 
-        <!-- 「部行山海間」系列精選推薦遊程（2條線上可跳轉 + 2條籌備中彈窗） -->
+        <!-- 「部行山海間」系列精選推薦遊程（2 條可跳轉連結 + 2 條點選跳出建置中彈窗） -->
         <section class="bg-white rounded-2xl p-4 sm:p-5 mb-5 shadow-sm border border-stone-200">
             <div class="flex items-center justify-between mb-3.5">
                 <div class="flex items-center space-x-2">
@@ -320,7 +320,7 @@
             </div>
 
             <div class="grid grid-cols-2 gap-2.5">
-                <!-- 行程 1：泰雅里山慢活（連到 healing-trip） -->
+                <!-- 行程 1：泰雅里山慢活（可直接跳轉） -->
                 <a href="https://envoytraveltaiwan-walker.github.io/healing-trip/" 
                    onclick="gtag('event', 'click_related_trip', {'trip_name': 'healing_trip'});"
                    class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
@@ -342,7 +342,7 @@
                     </span>
                 </a>
 
-                <!-- 行程 2：泰雅櫻花祭之旅（連到 sakura-atayal） -->
+                <!-- 行程 2：泰雅櫻花之旅（可直接跳轉） -->
                 <a href="https://envoytraveltaiwan-walker.github.io/sakura-atayal/" 
                    onclick="gtag('event', 'click_related_trip', {'trip_name': 'sakura_atayal'});"
                    class="bg-stone-50 hover:bg-stone-100 p-3 rounded-xl border border-stone-200 transition-all flex flex-col justify-between group">
@@ -364,7 +364,7 @@
                     </span>
                 </a>
 
-                <!-- 行程 3：籌備中路線 A（點擊提示建置中） -->
+                <!-- 行程 3：布農天籟之旅（點選跳出建置中彈窗） -->
                 <button type="button" 
                         onclick="showComingSoonModal('bunun_trip')"
                         class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
@@ -389,7 +389,7 @@
                     </span>
                 </button>
 
-                <!-- 行程 4：籌備中路線 B（點擊提示建置中） -->
+                <!-- 行程 4：排灣琉璃工藝（點選跳出建置中彈窗） -->
                 <button type="button" 
                         onclick="showComingSoonModal('paiwan_trip')"
                         class="text-left bg-stone-50/70 hover:bg-stone-100/80 p-3 rounded-xl border border-dashed border-stone-300 transition-all flex flex-col justify-between">
@@ -579,7 +579,7 @@
         </div>
     </div>
 
-    <!-- 語言切換與彈窗控制腳本 -->
+    <!-- 語言切換與彈窗控制腳本（包含 GA4 事件追蹤） -->
     <script>
         function setLanguage(lang) {
             const body = document.body;
@@ -606,7 +606,7 @@
             }
         }
 
-        // 籌備中路線彈窗控制
+        // 控制「建置中」彈出式對話框
         function showComingSoonModal(routeId) {
             const modal = document.getElementById('coming-soon-modal');
             modal.classList.remove('hidden');
