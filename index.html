@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO & OGP 設定 -->
-  <title>風が語りかける、もうひとつの台湾へ｜台湾原郷クラフトツアー・ENVOY 安捷國際旅行社</title>
-  <meta name="description" content="ガイドブックに載っていない台湾の深層へ。35年の案内人・莉梅姐（メイ姉さん）が誘う、里山思想と先住民の風土に寄り添う大人のクラフトツアー。馬告や刺蔥が香る山林野趣、6名様限定の丁寧な旅で、心洗われる静かな時間をお届けします。">
-  <meta name="keywords" content="台湾旅行, 台湾原住民族, 里山ツアー, クラフトツアー, 莉梅姐, 安捷旅行社, 台湾秘境, 馬告, 台湾美食, 原民會">
+  <title id="meta-title">風が語りかける、もうひとつの台湾へ｜ENVOY 安捷國際旅行社</title>
+  <meta name="description" id="meta-desc" content="ガイドブックに載っていない台湾の深層へ。35年の案内人・莉梅姐（メイ姉さん）が誘う、里山思想と先住民の風土に寄り添う大人のクラフトツアー。">
   <link rel="canonical" href="https://envoytraveltaiwan-walker.github.io/satoyama-indigenous">
   
-  <!-- Google Fonts: Noto Serif JP & Noto Sans JP -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Serif+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,7 +28,7 @@
             borderMuted: '#EAE6DF'
           },
           fontFamily: {
-            serif: ['"Noto Serif JP"', 'serif'],
+            serif: ['"Noto Serif JP"', '"Noto Serif TC"', 'serif'],
             sans: ['"Noto Sans JP"', 'sans-serif'],
           }
         }
@@ -41,7 +39,7 @@
     body {
       background-color: #F9F8F6;
       color: #2B2D2F;
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Noto Serif JP', 'Noto Serif TC', serif;
       -webkit-font-smoothing: antialiased;
     }
   </style>
@@ -51,13 +49,19 @@
   <!-- 頂部導航 -->
   <header class="w-full border-b border-borderMuted bg-paper/95 sticky top-0 z-50 backdrop-blur-sm">
     <div class="max-w-xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="text-earthGold text-xl tracking-widest">❖</span>
-        <span class="font-medium tracking-widest text-xs uppercase font-sans">ENVOY TRAVEL</span>
-      </div>
-      <div class="flex items-center space-x-1 bg-[#EBE7DF] px-2 py-1 rounded-full text-[11px] font-sans">
-        <span class="bg-white text-charcoal px-2.5 py-0.5 rounded-full shadow-xs font-medium">日本語</span>
-        <span class="text-neutral-500 px-2.5 py-0.5">繁中</span>
+      <!-- 官方正確 Logo -->
+      <a href="#" class="flex items-center">
+        <img 
+          src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/ENVOY_Logo_Transparent_HQ.png" 
+          alt="ENVOY TRAVEL 安捷國際旅行社" 
+          class="h-7 w-auto object-contain"
+        />
+      </a>
+      <!-- 三語系切換膠囊 (日 / 中 / EN) -->
+      <div class="flex items-center bg-[#ECE8E1] p-1 rounded-full text-[11px] font-sans">
+        <button onclick="setLang('ja')" id="btn-ja" class="px-2.5 py-0.5 rounded-full font-medium transition bg-white text-charcoal shadow-xs">日本語</button>
+        <button onclick="setLang('zh')" id="btn-zh" class="px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal">繁中</button>
+        <button onclick="setLang('en')" id="btn-en" class="px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal">EN</button>
       </div>
     </div>
   </header>
@@ -65,18 +69,16 @@
   <!-- 主容器 -->
   <main class="max-w-xl mx-auto px-6 py-10 space-y-16">
 
-    <!-- HERO SECTION & 原民會/部行山海間 官方認證 -->
+    <!-- HERO SECTION -->
     <section class="text-center space-y-6 pt-2">
-      <!-- 官方計畫雙標誌置頂 -->
+      <!-- 官方計畫雙標誌 -->
       <div class="flex justify-center items-center gap-6 py-2">
-        <!-- 原民會 Logo (02) -->
         <img 
           src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-02.png" 
-          alt="原住民族委員會 Council of Indigenous Peoples" 
+          alt="原住民族委員會" 
           class="h-10 md:h-11 object-contain"
         />
         <div class="h-6 w-[1px] bg-neutral-300"></div>
-        <!-- 部行山海間 Logo (07) -->
         <img 
           src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-07.jpg" 
           alt="部行山海間" 
@@ -85,14 +87,14 @@
       </div>
 
       <div class="inline-block border-b border-earthGold pb-1">
-        <span class="text-[11px] tracking-[0.25em] text-earthGold uppercase font-sans">Special Editorial ・ 里山と原郷の旅</span>
+        <span id="hero-tag" class="text-[11px] tracking-[0.25em] text-earthGold uppercase font-sans">Special Editorial ・ 里山と原郷の旅</span>
       </div>
       
-      <h1 class="text-2xl md:text-3xl font-light leading-relaxed tracking-wider">
+      <h1 id="hero-title" class="text-2xl md:text-3xl font-light leading-relaxed tracking-wider">
         風が語りかける、<br>もうひとつの台湾へ。
       </h1>
       
-      <p class="text-xs text-neutral-500 font-sans tracking-widest leading-loose">
+      <p id="hero-subtitle" class="text-xs text-neutral-500 font-sans tracking-widest leading-loose">
         ガイドブックが記していない、数千年の記憶が息づく場所。<br>
         大自然と人が織りなす「里山」の温もりに包まれるクラフトツアー。
       </p>
@@ -102,20 +104,19 @@
       </div>
     </section>
 
-    <!-- SECTION 1: 島嶼の深層記憶與數千年歷史 -->
+    <!-- SECTION 1: 島嶼の深層記憶 -->
     <section class="space-y-6 text-neutral-700 leading-relaxed text-[13px] font-normal">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Chapter 01</span>
-        <h2 class="text-lg font-medium text-charcoal">悠久の時を越えて｜島に息づく七百の記憶</h2>
+        <h2 id="ch1-title" class="text-lg font-medium text-charcoal">悠久の時を越えて｜島に息づく七百の記憶</h2>
       </div>
-      <p>
+      <p id="ch1-p1">
         大衆的な観光地から遠く離れた、霧深い稜線と豊かな木々の隙間。そこには、約5,000年前の新石器時代よりこの島で命を育み、太平洋の島々へと旅立っていった南島語族（オーストロネシア）の源流があります。
       </p>
-      <p>
-        現在、台湾には法的に認定された <strong>16の先住住民族</strong>、そして自然と寄り添いながら静かに暮らす <strong>700余りの集落</strong> が存在します。山稜を渡る風、谷を流れる清流、海岸線にそそぐ陽光——それぞれが異なる自然の恵みを受け、独自の風土と文化を紡いできました。
+      <p id="ch1-p2">
+        現在、台湾には法的に認定された <strong>16の先住民族</strong>、そして自然と寄り添いながら静かに暮らす <strong>700余りの集落</strong> が存在します。山稜を渡る風、谷を流れる清流、海岸線にそそぐ陽光——それぞれが異なる自然の恵みを受け、独自の風土と文化を紡いできました。
       </p>
 
-      <!-- 融入原民文化視覺元素 (03) -->
       <div class="w-full py-2 overflow-hidden rounded-xl">
         <img 
           src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-03.png" 
@@ -125,53 +126,49 @@
       </div>
     </section>
 
-    <!-- SECTION 2: 舌尖上的風土野趣 (食材特色) -->
+    <!-- SECTION 2: 舌尖上的風土野趣 -->
     <section class="space-y-6">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Chapter 02</span>
-        <h2 class="text-lg font-medium text-charcoal">大地の恵みをいただく｜五感を澄ます原生の味覚</h2>
+        <h2 id="ch2-title" class="text-lg font-medium text-charcoal">大地の恵みをいただく｜五感を澄ます原生の味覚</h2>
       </div>
-      <p class="text-[13px] text-neutral-600 leading-relaxed">
+      <p id="ch2-desc" class="text-[13px] text-neutral-600 leading-relaxed">
         自然から必要な分だけをいただき、命を分かち合う。先住民の食文化には、土地の息吹そのものが宿っています。
       </p>
 
       <div class="grid grid-cols-1 gap-3.5 pt-1">
-        <!-- 食材 1: 馬告 -->
         <div class="bg-white p-4 rounded-xl border border-borderMuted shadow-xs flex items-start space-x-3.5">
           <div class="w-10 h-10 rounded-full bg-paper flex-shrink-0 flex items-center justify-center text-deepForest text-base">🌿</div>
           <div class="space-y-1">
-            <h3 class="text-xs font-semibold text-charcoal">馬告（マーガオ / 山胡椒）</h3>
-            <p class="text-[12px] text-neutral-600 leading-relaxed font-sans">
+            <h3 id="food-1-title" class="text-xs font-semibold text-charcoal">馬告（マーガオ / 山胡椒）</h3>
+            <p id="food-1-desc" class="text-[12px] text-neutral-600 leading-relaxed font-sans">
               一見黒胡椒のような野生の実。口に含むとレモングラスと柑橘の清涼な香りが広がり、野渓魚や炭火焼きの甘みを鮮やかに引き立てます。
             </p>
           </div>
         </div>
-        <!-- 食材 2: 刺蔥 -->
         <div class="bg-white p-4 rounded-xl border border-borderMuted shadow-xs flex items-start space-x-3.5">
           <div class="w-10 h-10 rounded-full bg-paper flex-shrink-0 flex items-center justify-center text-deepForest text-base">🌱</div>
           <div class="space-y-1">
-            <h3 class="text-xs font-semibold text-charcoal">刺蔥（ツーツォン / カラスザンショウ）</h3>
-            <p class="text-[12px] text-neutral-600 leading-relaxed font-sans">
+            <h3 id="food-2-title" class="text-xs font-semibold text-charcoal">刺蔥（ツーツォン / カラスザンショウ）</h3>
+            <p id="food-2-desc" class="text-[12px] text-neutral-600 leading-relaxed font-sans">
               鋭い棘を持つ野生の香木。摘み取った若葉は重厚で豊かな芳香を放ち、地鶏の煮込みスープや香ばしい卵焼きに奥深い滋味を添えます。
             </p>
           </div>
         </div>
-        <!-- 食材 3: 小米 -->
         <div class="bg-white p-4 rounded-xl border border-borderMuted shadow-xs flex items-start space-x-3.5">
           <div class="w-10 h-10 rounded-full bg-paper flex-shrink-0 flex items-center justify-center text-deepForest text-base">🌾</div>
           <div class="space-y-1">
-            <h3 class="text-xs font-semibold text-charcoal">小米（あわ・もち粟）</h3>
-            <p class="text-[12px] text-neutral-600 leading-relaxed font-sans">
+            <h3 id="food-3-title" class="text-xs font-semibold text-charcoal">小米（あわ・もち粟）</h3>
+            <p id="food-3-desc" class="text-[12px] text-neutral-600 leading-relaxed font-sans">
               祖霊への感謝とともに受け継がれてきた神聖な穀物。木臼で丹念についた餅の柔らかな弾力や、ほのかに甘い醸造酒として客人をもてなします。
             </p>
           </div>
         </div>
-        <!-- 食材 4: 野菜と手焙煎珈琲 -->
         <div class="bg-white p-4 rounded-xl border border-borderMuted shadow-xs flex items-start space-x-3.5">
           <div class="w-10 h-10 rounded-full bg-paper flex-shrink-0 flex items-center justify-center text-deepForest text-base">☕</div>
           <div class="space-y-1">
-            <h3 class="text-xs font-semibold text-charcoal">旬の山野草 ＆ 高地手焙煎珈琲</h3>
-            <p class="text-[12px] text-neutral-600 leading-relaxed font-sans">
+            <h3 id="food-4-title" class="text-xs font-semibold text-charcoal">旬の山野草 ＆ 高地手焙煎珈琲</h3>
+            <p id="food-4-desc" class="text-[12px] text-neutral-600 leading-relaxed font-sans">
               朝露の中で摘まれる十数種の自生野菜、そして海風と陽光を浴びた手摘み珈琲。果実味と香ばしさが石板の軒下で静かに溶け合います。
             </p>
           </div>
@@ -179,12 +176,12 @@
       </div>
     </section>
 
-    <!-- SECTION 3: 六大風土意象 (暗色沉浸卡片) -->
+    <!-- SECTION 3: 六大風土意象 -->
     <section class="bg-indigoCard text-white p-6 md:p-8 rounded-2xl space-y-6 shadow-md relative overflow-hidden">
       <div class="text-center space-y-2 relative z-10">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.25em] uppercase">Indigenous Heritage</span>
-        <h2 class="text-base font-medium tracking-wide">大地と祖霊が宿る、六つの原風景</h2>
-        <p class="text-[11px] text-neutral-400 font-sans leading-relaxed">
+        <h2 id="sec3-title" class="text-base font-medium tracking-wide">大地と祖霊が宿る、六つの原風景</h2>
+        <p id="sec3-subtitle" class="text-[11px] text-neutral-400 font-sans leading-relaxed">
           急ぎ足の観光では決して触れられない、厳選された風土の記憶
         </p>
       </div>
@@ -192,38 +189,38 @@
       <div class="grid grid-cols-2 gap-3 pt-2 text-[12px] relative z-10 font-sans">
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">01</span>
-          <p class="font-medium text-white font-serif">高山霧林の境</p>
-          <p class="text-[10px] text-neutral-300">雲海を臨む桜樹下の茶席と馬告の温かな香り</p>
+          <p id="land-1-t" class="font-medium text-white font-serif">高山霧林の境</p>
+          <p id="land-1-d" class="text-[10px] text-neutral-300">雲海を臨む桜樹下の茶席と馬告の温かな香り</p>
         </div>
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">02</span>
-          <p class="font-medium text-white font-serif">隠谷猟径の境</p>
-          <p class="text-[10px] text-neutral-300">森の知恵を学ぶ道と、心身を癒す天然熱泉</p>
+          <p id="land-2-t" class="font-medium text-white font-serif">隠谷猟径の境</p>
+          <p id="land-2-d" class="text-[10px] text-neutral-300">森の知恵を学ぶ道と、心身を癒す天然熱泉</p>
         </div>
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">03</span>
-          <p class="font-medium text-white font-serif">日出縦谷の境</p>
-          <p class="text-[10px] text-neutral-300">大地を描く穀物の彩りと、採れたて旬野菜</p>
+          <p id="land-3-t" class="font-medium text-white font-serif">日出縦谷の境</p>
+          <p id="land-3-d" class="text-[10px] text-neutral-300">大地を描く穀物の彩りと、採れたて旬野菜</p>
         </div>
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">04</span>
-          <p class="font-medium text-white font-serif">巨木講堂の境</p>
-          <p class="text-[10px] text-neutral-300">壁なき原生林に響き渡る、魂の八部合音</p>
+          <p id="land-4-t" class="font-medium text-white font-serif">巨木講堂の境</p>
+          <p id="land-4-d" class="text-[10px] text-neutral-300">壁なき原生林に響き渡る、魂の八部合音</p>
         </div>
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">05</span>
-          <p class="font-medium text-white font-serif">斜面石階の境</p>
-          <p class="text-[10px] text-neutral-300">百歩蛇の幾何紋様と、古き石板屋の私房もてなし</p>
+          <p id="land-5-t" class="font-medium text-white font-serif">斜面石階の境</p>
+          <p id="land-5-d" class="text-[10px] text-neutral-300">百歩蛇の幾何紋様と、古き石板屋の私房もてなし</p>
         </div>
         <div class="bg-white/5 p-3.5 rounded-lg border border-white/10 space-y-1">
           <span class="text-earthGold block text-[10px]">06</span>
-          <p class="font-medium text-white font-serif">海風台地の境</p>
-          <p class="text-[10px] text-neutral-300">燦燦と注ぐ陽光が育む、手焙煎珈琲の芳醇</p>
+          <p id="land-6-t" class="font-medium text-white font-serif">海風台地の境</p>
+          <p id="land-6-d" class="text-[10px] text-neutral-300">燦燦と注ぐ陽光が育む、手焙煎珈琲の芳醇</p>
         </div>
       </div>
     </section>
 
-    <!-- 原民會旅展視覺元素過場 (05) -->
+    <!-- 原民會旅展視覺元素過場 -->
     <div class="w-full flex justify-center py-1">
       <img 
         src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-05.png" 
@@ -232,7 +229,7 @@
       />
     </div>
 
-    <!-- SECTION 4: 旅の案内人 莉梅姐（メイ姉さん） -->
+    <!-- SECTION 4: 旅の案内人 莉梅姐 -->
     <section class="space-y-6">
       <div class="bg-white p-6 rounded-2xl border border-borderMuted shadow-xs space-y-5">
         <div class="flex items-center justify-between">
@@ -241,12 +238,11 @@
               莉梅姐
             </div>
             <div>
-              <span class="text-[10px] text-earthGold uppercase font-sans tracking-widest block">旅の案内人 35年</span>
-              <h3 class="text-base font-semibold text-charcoal">莉梅姐（メイ姉さん）</h3>
-              <p class="text-[11px] text-neutral-400 font-sans">台湾原郷カルチャートラベル専門家</p>
+              <span id="guide-badge" class="text-[10px] text-earthGold uppercase font-sans tracking-widest block">旅の案内人 35年</span>
+              <h3 id="guide-name" class="text-base font-semibold text-charcoal">莉梅姐（メイ姉さん）</h3>
+              <p id="guide-title" class="text-[11px] text-neutral-400 font-sans">台湾原郷カルチャートラベル専門家</p>
             </div>
           </div>
-          <!-- 嵌入部行山海間推薦標章 (07) -->
           <img 
             src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-07.jpg" 
             alt="部行山海間 共同推薦" 
@@ -254,12 +250,12 @@
           />
         </div>
 
-        <blockquote class="border-l-2 border-earthGold pl-4 text-xs italic text-neutral-700 leading-relaxed font-serif bg-paper/60 py-2.5 rounded-r">
+        <blockquote id="guide-quote" class="border-l-2 border-earthGold pl-4 text-xs italic text-neutral-700 leading-relaxed font-serif bg-paper/60 py-2.5 rounded-r">
           「風の匂い、古木が語りかける呼吸。<br>
           35年歩み続けたからこそ出会えた、誰にも知られていない美しい集落へご案内します。」
         </blockquote>
 
-        <p class="text-[12px] text-neutral-600 leading-relaxed font-sans">
+        <p id="guide-body" class="text-[12px] text-neutral-600 leading-relaxed font-sans">
           旅とは、単に名所を巡る移動ではありません。それは土地が長い歳月をかけて育んできた「記憶の気配」にそっと触れること。莉梅姐が親しい友人をもてなすように、一般の観光では足を踏み入れられない長老の家屋や温かな家族の台所へ、心を込めてお連れします。
         </p>
       </div>
@@ -269,23 +265,23 @@
     <section class="bg-[#F0EBE1] p-6 rounded-2xl space-y-4 border border-borderMuted">
       <div class="flex items-center space-x-2 text-deepForest">
         <span class="text-sm">🍃</span>
-        <h3 class="text-sm font-semibold tracking-wide">台湾原郷に息づく「里山（Satoyama）」の約束</h3>
+        <h3 id="satoyama-title" class="text-sm font-semibold tracking-wide">台湾原郷に息づく「里山（Satoyama）」の約束</h3>
       </div>
-      <p class="text-[12px] text-neutral-700 leading-relaxed">
+      <p id="satoyama-desc" class="text-[12px] text-neutral-700 leading-relaxed">
         自然からいただく恵みは必要な分だけに留め、大地と共生する。この古くからの知恵を守るため、私たちは<strong>「1組最大6名様限定」</strong>の丁寧な旅を貫いています。
       </p>
       <div class="grid grid-cols-1 gap-2.5 pt-1 text-[11px] text-neutral-600 font-sans">
         <div class="flex items-start space-x-2">
           <span class="text-earthGold font-bold">•</span>
-          <span><strong>暮らしを乱さない</strong>：静かな集落の日常に溶け込み、家族のように対話する。</span>
+          <span id="satoyama-pt1"><strong>暮らしを乱さない</strong>：静かな集落の日常に溶け込み、家族のように対話する。</span>
         </div>
         <div class="flex items-start space-x-2">
           <span class="text-earthGold font-bold">•</span>
-          <span><strong>自然の負荷を最小限に</strong>：大型バスが入れない秘境を、足音を忍ばせて歩く。</span>
+          <span id="satoyama-pt2"><strong>自然の負荷を最小限に</strong>：大型バスが入れない秘境を、足音を忍ばせて歩く。</span>
         </div>
         <div class="flex items-start space-x-2">
           <span class="text-earthGold font-bold">•</span>
-          <span><strong>文化の循環</strong>：旅の収益は直接集落の手仕事工房や家族の台所へと還元されます。</span>
+          <span id="satoyama-pt3"><strong>文化の循環</strong>：旅の収益は直接集落の手仕事工房や家族の台所へと還元されます。</span>
         </div>
       </div>
     </section>
@@ -294,23 +290,20 @@
     <section class="space-y-5">
       <div class="space-y-1">
         <span class="text-[10px] text-earthGold font-sans tracking-[0.2em] uppercase">Curated Journeys</span>
-        <h2 class="text-lg font-medium text-charcoal">莉梅姐が届ける、4つの特別な時間</h2>
-        <p class="text-[11px] text-neutral-500 font-sans">全コース 6名様より催行（各回定員限定）</p>
+        <h2 id="tour-sec-title" class="text-lg font-medium text-charcoal">莉梅姐が届ける、4つの特別な時間</h2>
+        <p id="tour-sec-subtitle" class="text-[11px] text-neutral-500 font-sans">全コース 6名様より催行（各回定員限定）</p>
       </div>
 
       <div class="space-y-3 font-sans">
-
         <!-- 行程 1 -->
-        <a href="https://envoytraveltaiwan-walker.github.io/sakura-atayal" 
-           target="_blank" 
-           class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
+        <a href="https://envoytraveltaiwan-walker.github.io/sakura-atayal" target="_blank" class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
           <div class="flex justify-between items-start">
             <div class="space-y-1">
-              <span class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">2 Days・平日限定</span>
-              <h3 class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
+              <span id="t1-badge" class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">2 Days・平日限定</span>
+              <h3 id="t1-title" class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
                 🌸 桜樹下の微旅行・粉紅山林心霊漫歩
               </h3>
-              <p class="text-[11px] text-neutral-500 line-clamp-2">
+              <p id="t1-desc" class="text-[11px] text-neutral-500 line-clamp-2">
                 満開の桜の下で楽しむ静かなプライベート茶席。満天の星空観賞と、香り高き馬告と刺蔥の滋味。
               </p>
             </div>
@@ -318,17 +311,15 @@
           </div>
         </a>
 
-        <!-- 行程 2 (無紅檜字樣) -->
-        <a href="https://envoytraveltaiwan-walker.github.io/hunter-atayal" 
-           target="_blank" 
-           class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
+        <!-- 行程 2 -->
+        <a href="https://envoytraveltaiwan-walker.github.io/hunter-atayal" target="_blank" class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
           <div class="flex justify-between items-start">
             <div class="space-y-1">
-              <span class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">2 Days・心身リトリート</span>
-              <h3 class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
+              <span id="t2-badge" class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">2 Days・心身リトリート</span>
+              <h3 id="t2-title" class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
                 🏹 山林猟人の修復旅・秘境探索と天然熱泉
               </h3>
-              <p class="text-[11px] text-neutral-500 line-clamp-2">
+              <p id="t2-desc" class="text-[11px] text-neutral-500 line-clamp-2">
                 原始深林の静寂を歩き、手作り竹筒飯と伝統の餅つきを体験。山歩きの後は極上の天然温泉で深い癒しを。
               </p>
             </div>
@@ -337,16 +328,14 @@
         </a>
 
         <!-- 行程 3 -->
-        <a href="https://envoytraveltaiwan-walker.github.io/valley-hotspring" 
-           target="_blank" 
-           class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
+        <a href="https://envoytraveltaiwan-walker.github.io/valley-hotspring" target="_blank" class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
           <div class="flex justify-between items-start">
             <div class="space-y-1">
-              <span class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">3 Days・低炭素鉄道旅</span>
-              <h3 class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
+              <span id="t3-badge" class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">3 Days・低炭素鉄道旅</span>
+              <h3 id="t3-title" class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
                 🚂 縦谷双湯の旅・壁なき森林博物館と大地のアート
               </h3>
-              <p class="text-[11px] text-neutral-500 line-clamp-2">
+              <p id="t3-desc" class="text-[11px] text-neutral-500 line-clamp-2">
                 台湾鉄道でゆったり巡るエコツアー。色彩豊かな米のアート体験と、歴史ある名湯で過ごす贅沢なひととき。
               </p>
             </div>
@@ -355,27 +344,24 @@
         </a>
 
         <!-- 行程 4 -->
-        <a href="https://envoytraveltaiwan-walker.github.io/8days-indigenous" 
-           target="_blank" 
-           class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
+        <a href="https://envoytraveltaiwan-walker.github.io/8days-indigenous" target="_blank" class="group block bg-white p-4 rounded-xl border border-borderMuted shadow-xs hover:border-earthGold transition-all duration-200">
           <div class="flex justify-between items-start">
             <div class="space-y-1">
-              <span class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">8 Days・深層グランドツアー</span>
-              <h3 class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
+              <span id="t4-badge" class="text-[10px] bg-paper text-earthGold px-2 py-0.5 rounded font-medium">8 Days・深層グランドツアー</span>
+              <h3 id="t4-title" class="text-[13px] font-medium text-charcoal group-hover:text-earthGold transition-colors font-serif">
                 🌿 山海と呼吸する・四大多元民族を巡る深層の旅
               </h3>
-              <p class="text-[11px] text-neutral-500 line-clamp-2">
+              <p id="t4-desc" class="text-[11px] text-neutral-500 line-clamp-2">
                 台湾を縦断し、多様な文化の深淵に触れる8日間。専属ハイヤーと莉梅姐の温かなエスコートで巡る決定版。
               </p>
             </div>
             <span class="text-earthGold text-lg transform group-hover:translate-x-1 transition-transform ml-3">➔</span>
           </div>
         </a>
-
       </div>
     </section>
 
-    <!-- 原民會展會形象視覺裝飾條 (06) -->
+    <!-- 原民會展會形象視覺裝飾條 -->
     <div class="w-full py-2">
       <img 
         src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-06.png" 
@@ -384,47 +370,293 @@
       />
     </div>
 
-    <!-- SECTION 7: 日本の旅人へのメッセージ -->
+    <!-- SECTION 7: 給旅人的信 -->
     <section class="bg-[#ECE7DE] p-6 rounded-2xl text-center space-y-3 font-serif">
-      <h3 class="text-sm font-medium text-charcoal">日本の旅人の皆様へ</h3>
-      <p class="text-[12px] text-neutral-700 leading-relaxed font-sans">
+      <h3 id="letter-title" class="text-sm font-medium text-charcoal">日本の旅人の皆様へ</h3>
+      <p id="letter-body" class="text-[12px] text-neutral-700 leading-relaxed font-sans">
         言葉や文化の壁を越え、まるで家族を迎えるように安心してお任せいただける旅をご用意しております。東京の会場で結ばれたご縁が、台湾の静かな森でお茶を酌み交わす日へとつながることを、心より楽しみにしております。
       </p>
-      <p class="text-xs text-earthGold font-serif pt-1">— 旅の案内人 莉梅姐 より</p>
+      <p id="letter-sign" class="text-xs text-earthGold font-serif pt-1">— 旅の案内人 莉梅姐 より</p>
     </section>
 
   </main>
 
-  <!-- 頁尾：原民會認證與安捷旅行社 -->
+  <!-- 頁尾：官方正確 Logo 與認證 -->
   <footer class="border-t border-borderMuted py-8 text-center text-neutral-400 text-[11px] font-sans space-y-4 max-w-xl mx-auto px-6">
     <div class="flex justify-center items-center gap-4 py-1">
       <img 
         src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/%E7%B4%A0%E6%9D%90_2026%E6%97%A5%E6%9C%AC%E6%97%85%E5%B1%95(%E5%8E%9F%E6%B0%91%E6%9C%83)_%E7%B5%A6%E6%A5%AD%E8%80%85-02.png" 
         alt="原住民族委員會" 
-        class="h-7 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition"
+        class="h-7 object-contain opacity-70"
       />
       <div class="h-4 w-[1px] bg-neutral-300"></div>
-      <span class="text-neutral-500 font-medium">安捷國際旅行社（ENVOY TRAVEL）</span>
+      <img 
+        src="https://raw.githubusercontent.com/envoytraveltaiwan-walker/satoyama-indigenous/main/ENVOY_Logo_Transparent_HQ.png" 
+        alt="ENVOY TRAVEL" 
+        class="h-5 object-contain opacity-70"
+      />
     </div>
     
-    <p class="text-[10px] leading-relaxed text-neutral-400">
+    <p id="footer-text" class="text-[10px] leading-relaxed text-neutral-400">
       原住民族委員会 認定パートナーシップ企業<br>
       交通部觀光署 登録旅行業 甲種 5920 号<br>
       © 2026 ENVOY TRAVEL SERVICE CO., LTD. All Rights Reserved.
     </p>
   </footer>
 
-  <!-- 底部固定諮詢 Bar (針對旅展現場快速轉化) -->
+  <!-- 底部固定諮詢 Bar -->
   <div class="sticky bottom-0 w-full bg-white/95 backdrop-blur border-t border-borderMuted py-3 px-6 z-50">
     <div class="max-w-xl mx-auto flex items-center justify-between space-x-3">
-      <a href="mailto:service@envoytravel.com.tw" class="flex-1 text-center py-2.5 rounded-lg border border-charcoal text-charcoal text-xs font-sans font-medium hover:bg-neutral-50 transition">
+      <a href="mailto:service@envoytravel.com.tw" id="cta-mail" class="flex-1 text-center py-2.5 rounded-lg border border-charcoal text-charcoal text-xs font-sans font-medium hover:bg-neutral-50 transition">
         ✉ メールでお問合せ
       </a>
-      <a href="https://line.me" target="_blank" class="flex-1 text-center py-2.5 rounded-lg bg-[#06C755] text-white text-xs font-sans font-medium shadow-xs hover:opacity-90 transition">
+      <a href="https://line.me" target="_blank" id="cta-line" class="flex-1 text-center py-2.5 rounded-lg bg-[#06C755] text-white text-xs font-sans font-medium shadow-xs hover:opacity-90 transition">
         💬 LINEで相談する
       </a>
     </div>
   </div>
 
+  <!-- 多語系即時切換 Script (日語 / 繁中 / EN) -->
+  <script>
+    const i18n = {
+      ja: {
+        metaTitle: "風が語りかける、もうひとつの台湾へ｜ENVOY 安捷國際旅行社",
+        heroTag: "Special Editorial ・ 里山と原郷の旅",
+        heroTitle: "風が語りかける、<br>もうひとつの台湾へ。",
+        heroSubtitle: "ガイドブックが記していない、数千年の記憶が息づく場所。<br>大自然と人が織りなす「里山」の温もりに包まれるクラフトツアー。",
+        ch1Title: "悠久の時を越えて｜島に息づく七百の記憶",
+        ch1P1: "大衆的な観光地から遠く離れた、霧深い稜線と豊かな木々の隙間。そこには、約5,000年前の新石器時代よりこの島で命を育み、太平洋の島々へと旅立っていった南島語族（オーストロネシア）の源流があります。",
+        ch1P2: "現在、台湾には法的に認定された <strong>16の先住民族</strong>、そして自然と寄り添いながら静かに暮らす <strong>700余りの集落</strong> が存在します。山稜を渡る風、谷を流れる清流、海岸線にそそぐ陽光——それぞれが異なる自然の恵みを受け、独自の風土と文化を紡いできました。",
+        ch2Title: "大地の恵みをいただく｜五感を澄ます原生の味覚",
+        ch2Desc: "自然から必要な分だけをいただき、命を分かち合う。先住民の食文化には、土地の息吹そのものが宿っています。",
+        food1Title: "馬告（マーガオ / 山胡椒）",
+        food1Desc: "一見黒胡椒のような野生の実。口に含むとレモングラスと柑橘の清涼な香りが広がり、野渓魚や炭火焼きの甘みを鮮やかに引き立てます。",
+        food2Title: "刺蔥（ツーツォン / カラスザンショウ）",
+        food2Desc: "鋭い棘を持つ野生の香木。摘み取った若葉は重厚で豊かな芳香を放ち、地鶏の煮込みスープや香ばしい卵焼きに奥深い滋味を添えます。",
+        food3Title: "小米（あわ・もち粟）",
+        food3Desc: "祖霊への感謝とともに受け継がれてきた神聖な穀物。木臼で丹念についた餅の柔らかな弾力や、ほのかに甘い醸造酒として客人をもてなします。",
+        food4Title: "旬の山野草 ＆ 高地手焙煎珈琲",
+        food4Desc: "朝露の中で摘まれる十数種の自生野菜、そして海風と陽光を浴びた手摘み珈琲。果実味と香ばしさが石板の軒下で静かに溶け合います。",
+        sec3Title: "大地と祖霊が宿る、六つの原風景",
+        sec3Subtitle: "急ぎ足の観光では決して触れられない、厳選された風土の記憶",
+        land1T: "高山霧林の境", land1D: "雲海を臨む桜樹下の茶席と馬告の温かな香り",
+        land2T: "隠谷猟径の境", land2D: "森の知恵を学ぶ道と、心身を癒す天然熱泉",
+        land3T: "日出縦谷の境", land3D: "大地を描く穀物の彩りと、採れたて旬野菜",
+        land4T: "巨木講堂の境", land4D: "壁なき原生林に響き渡る、魂の八部合音",
+        land5T: "斜面石階の境", land5D: "百歩蛇の幾何紋様と、古き石板屋の私房もてなし",
+        land6T: "海風台地の境", land6D: "燦燦と注ぐ陽光が育む、手焙煎珈琲の芳醇",
+        guideBadge: "旅の案内人 35年",
+        guideName: "莉梅姐（メイ姉さん）",
+        guideTitle: "台湾原郷カルチャートラベル専門家",
+        guideQuote: "「風の匂い、古木が語りかける呼吸。<br>35年歩み続けたからこそ出会えた、誰にも知られていない美しい集落へご案内します。」",
+        guideBody: "旅とは、単に名所を巡る移動ではありません。それは土地が長い歳月をかけて育んできた「記憶の気配」にそっと触れること。莉梅姐が親しい友人をもてなすように、一般の観光では足を踏み入れられない長老の家屋や温かな家族の台所へ、心を込めてお連れします。",
+        satoyamaTitle: "台湾原郷に息づく「里山（Satoyama）」の約束",
+        satoyamaDesc: "自然からいただく恵みは必要な分だけに留め、大地と共生する。この古くからの知恵を守るため、私たちは<strong>「1組最大6名様限定」</strong>の丁寧な旅を貫いています。",
+        satoyamaPt1: "<strong>暮らしを乱さない</strong>：静かな集落の日常に溶け込み、家族のように対話する。",
+        satoyamaPt2: "<strong>自然の負荷を最小限に</strong>：大型バスが入れない秘境を、足音を忍ばせて歩く。",
+        satoyamaPt3: "<strong>文化の循環</strong>：旅の収益は直接集落の手仕事工房や家族の台所へと還元されます。",
+        tourSecTitle: "莉梅姐が届ける、4つの特別な時間",
+        tourSecSubtitle: "全コース 6名様より催行（各回定員限定）",
+        t1Badge: "2 Days・平日限定", t1Title: "🌸 桜樹下の微旅行・粉紅山林心霊漫歩", t1Desc: "満開の桜の下で楽しむ静かなプライベート茶席。満天の星空観賞と、香り高き馬告と刺蔥の滋味。",
+        t2Badge: "2 Days・心身リトリート", t2Title: "🏹 山林猟人の修復旅・秘境探索と天然熱泉", t2Desc: "原始深林の静寂を歩き、手作り竹筒飯と伝統の餅つきを体験。山歩きの後は極上の天然温泉で深い癒しを。",
+        t3Badge: "3 Days・低炭素鉄道旅", t3Title: "🚂 縦谷双湯の旅・壁なき森林博物館と大地のアート", t3Desc: "台湾鉄道でゆったり巡るエコツアー。色彩豊かな米のアート体験と、歴史ある名湯で過ごす贅沢なひととき。",
+        t4Badge: "8 Days・深層グランドツアー", t4Title: "🌿 山海と呼吸する・四大多元民族を巡る深層の旅", t4Desc: "台湾を縦断し、多様な文化の深淵に触れる8日間。専属ハイヤーと莉梅姐の温かなエスコートで巡る決定版。",
+        letterTitle: "日本の旅人の皆様へ",
+        letterBody: "言葉や文化の壁を越え、まるで家族を迎えるように安心してお任せいただける旅をご用意しております。東京の会場で結ばれたご縁が、台湾の静かな森でお茶を酌み交わす日へとつながることを、心より楽しみにしております。",
+        letterSign: "— 旅の案内人 莉梅姐 より",
+        footerText: "原住民族委員会 認定パートナーシップ企業<br>交通部觀光署 登録旅行業 甲種 5920 号<br>© 2026 ENVOY TRAVEL SERVICE CO., LTD. All Rights Reserved.",
+        ctaMail: "✉ メールでお問合せ",
+        ctaLine: "💬 LINEで相談する"
+      },
+      zh: {
+        metaTitle: "聽風的呼吸，走進島嶼的深處｜ENVOY 安捷國際旅行社",
+        heroTag: "特別企劃 ・ 里山與原鄉慢旅",
+        heroTitle: "風所傾訴的，<br>未曾被記載的台灣深處。",
+        heroSubtitle: "旅遊書未曾觸及、數千年記憶流淌之地。<br>感受人與自然和諧共生、溫柔包裹身心的「里山」工藝行旅。",
+        ch1Title: "跨越悠遠時光｜島嶼棲居的七百處記憶",
+        ch1P1: "遠離喧囂觀光路線的山嵐稜線與蒼翠林木間，蘊藏著距今約5,000年前新石器時代南島語族的繁衍起點與航向太平洋的深遠記憶。",
+        ch1P2: "如今，台灣擁有經法定認定的 <strong>16個原住民族群</strong>，以及與自然共融棲居的 <strong>七百多處部落聚落</strong>。隨風拂動的山嶺、澄澈河谷與海岸明陽，共同孕育出獨樹一幟的風土靈魂。",
+        ch2Title: "領受大地恩惠｜澄澈五感的原生之味",
+        ch2Desc: "取之有度、心懷敬畏。原住民的飲食文化裡，流淌著土地最深層的呼吸。",
+        food1Title: "馬告（Makauy / 山胡椒）",
+        food1Desc: "如黑胡椒般的山林黑珍珠。入口迸發檸檬香茅與柑橘的清冽辛香，烘托野溪鮮魚與炭火烤山珍的甘甜。",
+        food2Title: "刺蔥（Tana / 食茱萸）",
+        food2Desc: "全株帶刺的原生香木。採摘嫩葉入菜，散發濃烈純粹的森林氣息，化為燉土雞湯與烘蛋的深層靈魂。",
+        food3Title: "小米（Tbiak）",
+        food3Desc: "向祖靈敬獻的神聖糧作。木臼手搗麻糬的溫潤彈韌，或微甜香氣的部落釀酒，象徵家人共享的真摯溫度。",
+        food4Title: "旬時山野草 ＆ 高地手焙咖啡",
+        food4Desc: "隨朝露採擷的數十種野生時蔬，以及陽光與海風孕育的手摘咖啡。石板屋簷下透出優雅堅果與果香。",
+        sec3Title: "大地與祖靈駐足的六種原風景",
+        sec3Subtitle: "不急躁趕路，唯有靜心方能觸及的風土印記",
+        land1T: "高山霧林之境", land1D: "雲海櫻樹下的私人茶席與馬告暖湯",
+        land2T: "隱谷獵徑之境", land2D: "跟隨獵人漫步古林，天然熱泉療癒身心",
+        land3T: "日出縱谷之境", land3D: "大地畫布的彩米圖騰與時令野菜餐桌",
+        land4T: "巨木講堂之境", land4D: "無水泥巨榕森林中震撼心靈的八部天籟",
+        land5T: "斜面石階之境", land5D: "百步蛇圖騰與頭目家屋的私廚家常款待",
+        land6T: "海風台地之境", land6D: "日光豐沛的火山高台，親手翻焙醇香咖啡",
+        guideBadge: "專業引路人 35年",
+        guideName: "莉梅姐（Mei Jie）",
+        guideTitle: "台灣原鄉深度文化慢旅顧問",
+        guideQuote: "「風的氣息、古樹低語的呼吸。<br>正因走得夠慢、走得夠深，才能在35年裡遇見未載於書上的島嶼溫度。」",
+        guideBody: "旅行絕非打卡換景，而是輕觸土地歲月積累的記憶氣息。莉梅姐如同款待故友，帶您推開一般旅客無法踏入的長老家屋與部落私廚。",
+        satoyamaTitle: "台灣原鄉實踐的「里山（Satoyama）」哲學",
+        satoyamaDesc: "順應自然、循環共生。為了不驚擾山林與聚落日常，我們堅持<strong>「每團上限6位」</strong>的極致慢旅原則。",
+        satoyamaPt1: "<strong>不打擾部落日常</strong>：以謙遜姿態走進聚落，如同造訪遠方家人般平靜對話。",
+        satoyamaPt2: "<strong>環境零負擔移動</strong>：捨棄大巴走進深山密林，以最輕柔的腳步踏過泥土。",
+        satoyamaPt3: "<strong>在地永續正向循環</strong>：旅行收益全數直接回流部落工坊與在地私廚，守護生態。",
+        tourSecTitle: "莉梅姐精選・四段私藏時光",
+        tourSecSubtitle: "全行程 6人即刻成團（每梯次上限限量）",
+        t1Badge: "2天1夜・平日限定", t1Title: "🌸 櫻花樹下的微旅行・粉紅山林心靈漫步", t1Desc: "樹下專屬茶席與無光害星空銀河，品嚐高山馬告香菇燉雞與刺蔥烘蛋。",
+        t2Badge: "2天1夜・身心修復", t2Title: "🏹 山林獵人修復之旅・秘境探索與天然熱泉", t2Desc: "漫步原始深林密徑，體驗手作竹筒飯與搗麻糬，享受野溪熱泉療癒身心。",
+        t3Badge: "3天2夜・低碳鐵道", t3Title: "🚂 縱谷雙湯慢旅・無牆森林博物館與大地藝術", t3Desc: "搭乘綠色鐵道深入縱谷，體驗彩繪米手作與百年雙名湯極致療癒。",
+        t4Badge: "8天7夜・深度縱貫", t4Title: "🌿 跟著山海去呼吸・橫跨四大族群深層心靈行旅", t4Desc: "縱貫台灣多元族群領域，全程專車尊榮接送與沉浸式部落私廚饗宴。",
+        letterTitle: "致 日本的旅行家們",
+        letterBody: "跨越語言與文化，我們以迎接家人的真心為您籌備。期待在東京相遇的緣分，能化為日後在台灣靜謐山林一同圍爐品茶的溫暖時光。",
+        letterSign: "— 旅之引路人 莉梅姐 敬上",
+        footerText: "原住民族委員會 認證合作旅行社<br>交通部觀光署 註冊旅行業 甲種 5920 號<br>© 2026 ENVOY TRAVEL SERVICE CO., LTD. All Rights Reserved.",
+        ctaMail: "✉ Email 聯絡我們",
+        ctaLine: "💬 LINE 即刻預約諮詢"
+      },
+      en: {
+        metaTitle: "Where the Wind Whispers: Deep Indigenous Taiwan｜ENVOY TRAVEL",
+        heroTag: "Special Editorial ・ Satoyama & Indigenous Journeys",
+        heroTitle: "Where the Wind Whispers,<br>Unveiling Sacred Taiwan.",
+        heroSubtitle: "A realm untouched by typical guidebooks, steeped in thousands of years of memory.<br>Immerse yourself in authentic Satoyama harmony with bespoke small-group journeys.",
+        ch1Title: "Timeless Echoes｜700 Villages of Living Heritage",
+        ch1P1: "Beyond crowded tourist routes lies the cradle of the Austronesian diaspora, thriving across Taiwan’s cloud-kissed ridges for over 5,000 years.",
+        ch1P2: "Today, Taiwan is home to <strong>16 recognized indigenous nations</strong> and more than <strong>700 serene villages</strong>. Each landscape nurtures a distinctive philosophy of balance between humanity and the earth.",
+        ch2Title: "Gifts of the Soil｜Primal Flavors for the Senses",
+        ch2Desc: "Taking only what is needed and honoring every harvest. The ancestral culinary philosophy carries the true breath of the land.",
+        food1Title: "Makauy (Mountain Pepper)",
+        food1Desc: "Wild spice pearls bursting with vibrant lemongrass and citrus aromatics, elevating local stream fish and open-fire roasted delicacies.",
+        food2Title: "Tana (Aralia Spines)",
+        food2Desc: "A spiny mountain tree whose tender wild leaves impart a profound herbal essence to warm broths and traditional omelets.",
+        food3Title: "Tbiak (Millet)",
+        food3Desc: "A sacred grain of thanksgiving. Mortar-pounded rice cakes and gentle floral wines shared warmly among kindred spirits.",
+        food4Title: "Wild Mountain Greens & Craft Coffee",
+        food4Desc: "Hand-foraged dew-fresh herbs paired with high-altitude volcanic coffee sun-dried and gently roasted under heritage eaves.",
+        sec3Title: "Six Ancestral Horizons",
+        sec3Subtitle: "An intimate communion with nature reserved for the mindful traveler",
+        land1T: "Cloud Forest Sanctuary", land1D: "Private tea ceremonies beneath cherry blossoms and aromatic Makauy broths.",
+        land2T: "Hidden Hunter Trails", land2D: "Walking ancient forest paths followed by restorative natural thermal springs.",
+        land3T: "Sunrise Rift Valley", land3D: "Living earth canvases woven from native grains and foraged field produce.",
+        land4T: "Ancient Banyan Hall", land4D: "Resonant eight-part polyphonic harmonies rising through primeval boughs.",
+        land5T: "Slate Terraces", land5D: "Ancestral totems, noble slate houses, and private hearthside hospitality.",
+        land6T: "Ocean-Breeze Highlands", land6D: "Volcanic plateaus where sun-kissed craft coffee beans are roasted by hand.",
+        guideBadge: "Cultural Concierge (35 Years)",
+        guideName: "Mei-Jie (Mei)",
+        guideTitle: "Taiwan Indigenous Travel Specialist",
+        guideQuote: "\"Listen to the breeze and the ancient boughs. Thirty-five years of quiet wandering have revealed hidden sanctuaries found in no guidebook.\"",
+        guideBody: "Travel is not mere movement; it is an attunement to memory. Mei-Jie opens private hearths and village doors, welcoming you as cherished family.",
+        satoyamaTitle: "The Living Satoyama Philosophy in Taiwan",
+        satoyamaDesc: "Harmonious coexistence with living ecosystems. To preserve local rhythms, every departure is strictly limited to <strong>a maximum of 6 guests</strong>.",
+        satoyamaPt1: "<strong>Respecting Village Peace</strong>: Blending gently into daily life without commercial disruption.",
+        satoyamaPt2: "<strong>Zero-Footprint Exploration</strong>: Walking lightly into secluded valleys where tour buses cannot enter.",
+        satoyamaPt3: "<strong>Cultural Reinvestment</strong>: Direct economic returns to village artisan studios and family kitchens.",
+        tourSecTitle: "Curated Experiences with Mei-Jie",
+        tourSecSubtitle: "Guaranteed departures from 6 guests (Strictly capped capacity)",
+        t1Badge: "2 Days・Weekday Exquisite", t1Title: "🌸 Cherry Blossom Sanctuary & Mountain Serenity", t1Desc: "Private tea sessions beneath blossoming boughs, dark-sky stargazing, and Makauy chicken hotpot.",
+        t2Badge: "2 Days・Restorative Retreat", t2Title: "🏹 Hunter's Restorative Trail & Forest Springs", t2Desc: "Quiet primeval woods, bamboo rice craft, traditional mochi making, and pure natural hot springs.",
+        t3Badge: "3 Days・Low-Carbon Rail", t3Title: "🚂 Valley Thermal Springs & The Living Forest", t3Desc: "Sustainable rail journeys into the open-air forest museum, agricultural art, and historic thermal springs.",
+        t4Badge: "8 Days・Grand Expedition", t4Title: "🌿 Breathe with Mountains and Oceans: 4 Nations", t4Desc: "An eight-day private traverse through four distinct indigenous cultures with dedicated transport and hearth dining.",
+        letterTitle: "A Message to Our Travelers",
+        letterBody: "Transcend linguistic and cultural divides with dedicated warmth. We eagerly look forward to sharing warm tea together in the quiet woods of Taiwan.",
+        letterSign: "— Warmest regards, Mei-Jie",
+        footerText: "Council of Indigenous Peoples Certified Travel Partner<br>Tourism Administration License: Class A 5920<br>© 2026 ENVOY TRAVEL SERVICE CO., LTD. All Rights Reserved.",
+        ctaMail: "✉ Inquire via Email",
+        ctaLine: "💬 Chat via LINE"
+      }
+    };
+
+    function setLang(lang) {
+      const data = i18n[lang];
+      if (!data) return;
+
+      // 更新按鈕樣式
+      ['ja', 'zh', 'en'].forEach(l => {
+        const btn = document.getElementById(`btn-${l}`);
+        if (l === lang) {
+          btn.className = "px-2.5 py-0.5 rounded-full font-medium transition bg-white text-charcoal shadow-xs";
+        } else {
+          btn.className = "px-2.5 py-0.5 rounded-full font-medium transition text-neutral-500 hover:text-charcoal";
+        }
+      });
+
+      // 替換各欄位文字
+      document.getElementById('meta-title').innerText = data.metaTitle;
+      document.getElementById('hero-tag').innerText = data.heroTag;
+      document.getElementById('hero-title').innerHTML = data.heroTitle;
+      document.getElementById('hero-subtitle').innerHTML = data.heroSubtitle;
+
+      document.getElementById('ch1-title').innerText = data.ch1Title;
+      document.getElementById('ch1-p1').innerHTML = data.ch1P1;
+      document.getElementById('ch1-p2').innerHTML = data.ch1P2;
+
+      document.getElementById('ch2-title').innerText = data.ch2Title;
+      document.getElementById('ch2-desc').innerText = data.ch2Desc;
+      document.getElementById('food-1-title').innerText = data.food1Title;
+      document.getElementById('food-1-desc').innerText = data.food1Desc;
+      document.getElementById('food-2-title').innerText = data.food2Title;
+      document.getElementById('food-2-desc').innerText = data.food2Desc;
+      document.getElementById('food-3-title').innerText = data.food3Title;
+      document.getElementById('food-3-desc').innerText = data.food3Desc;
+      document.getElementById('food-4-title').innerText = data.food4Title;
+      document.getElementById('food-4-desc').innerText = data.food4Desc;
+
+      document.getElementById('sec3-title').innerText = data.sec3Title;
+      document.getElementById('sec3-subtitle').innerText = data.sec3Subtitle;
+      document.getElementById('land-1-t').innerText = data.land1T;
+      document.getElementById('land-1-d').innerText = data.land1D;
+      document.getElementById('land-2-t').innerText = data.land2T;
+      document.getElementById('land-2-d').innerText = data.land2D;
+      document.getElementById('land-3-t').innerText = data.land3T;
+      document.getElementById('land-3-d').innerText = data.land3D;
+      document.getElementById('land-4-t').innerText = data.land4T;
+      document.getElementById('land-4-d').innerText = data.land4D;
+      document.getElementById('land-5-t').innerText = data.land5T;
+      document.getElementById('land-5-d').innerText = data.land5D;
+      document.getElementById('land-6-t').innerText = data.land6T;
+      document.getElementById('land-6-d').innerText = data.land6D;
+
+      document.getElementById('guide-badge').innerText = data.guideBadge;
+      document.getElementById('guide-name').innerText = data.guideName;
+      document.getElementById('guide-title').innerText = data.guideTitle;
+      document.getElementById('guide-quote').innerHTML = data.guideQuote;
+      document.getElementById('guide-body').innerText = data.guideBody;
+
+      document.getElementById('satoyama-title').innerText = data.satoyamaTitle;
+      document.getElementById('satoyama-desc').innerHTML = data.satoyamaDesc;
+      document.getElementById('satoyama-pt1').innerHTML = data.satoyamaPt1;
+      document.getElementById('satoyama-pt2').innerHTML = data.satoyamaPt2;
+      document.getElementById('satoyama-pt3').innerHTML = data.satoyamaPt3;
+
+      document.getElementById('tour-sec-title').innerText = data.tourSecTitle;
+      document.getElementById('tour-sec-subtitle').innerText = data.tourSecSubtitle;
+
+      document.getElementById('t1-badge').innerText = data.t1Badge;
+      document.getElementById('t1-title').innerText = data.t1Title;
+      document.getElementById('t1-desc').innerText = data.t1Desc;
+
+      document.getElementById('t2-badge').innerText = data.t2Badge;
+      document.getElementById('t2-title').innerText = data.t2Title;
+      document.getElementById('t2-desc').innerText = data.t2Desc;
+
+      document.getElementById('t3-badge').innerText = data.t3Badge;
+      document.getElementById('t3-title').innerText = data.t3Title;
+      document.getElementById('t3-desc').innerText = data.t3Desc;
+
+      document.getElementById('t4-badge').innerText = data.t4Badge;
+      document.getElementById('t4-title').innerText = data.t4Title;
+      document.getElementById('t4-desc').innerText = data.t4Desc;
+
+      document.getElementById('letter-title').innerText = data.letterTitle;
+      document.getElementById('letter-body').innerText = data.letterBody;
+      document.getElementById('letter-sign').innerText = data.letterSign;
+
+      document.getElementById('footer-text').innerHTML = data.footerText;
+      document.getElementById('cta-mail').innerText = data.ctaMail;
+      document.getElementById('cta-line').innerText = data.ctaLine;
+    }
+  </script>
 </body>
 </html>
